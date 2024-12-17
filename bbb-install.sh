@@ -562,7 +562,7 @@ need_ppa() {
 }
 
 check_version() {
-  if ! echo "$1" | grep -Eq "jammy-310"; then err "This script can only install BigBlueButton 3.1 and is meant to be run on Ubuntu 22.04 (jammy) server."; fi
+  if ! echo "$1" | grep -Eq "jammy-30"; then err "This script can only install BigBlueButton 3.1 and is meant to be run on Ubuntu 22.04 (jammy) server."; fi
   DISTRO=${1%%-*}
   if ! wget -qS --spider "https://$PACKAGE_REPOSITORY/$1/dists/bigbluebutton-$DISTRO/Release.gpg" > /dev/null 2>&1; then
     err "Unable to locate packages for $1 at $PACKAGE_REPOSITORY."
